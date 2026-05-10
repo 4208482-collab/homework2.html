@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You – Cougar Care Medical</title>
+  <link rel="stylesheet" href="styles4.css">
+  <style>
+    .ty-box {
+      max-width: 580px;
+      margin: 60px auto;
+      background: white;
+      border-radius: 8px;
+      padding: 48px 40px;
+      text-align: center;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+    .ty-box .check { font-size: 3rem; color: #2e7d32; margin-bottom: 12px; }
+    .ty-box h2 { color: #c8102e; font-size: 1.7rem; margin-bottom: 12px; }
+    .ty-box p  { font-size: 0.95rem; color: #444; line-height: 1.7; margin-bottom: 10px; }
+    .back-btn  { display: inline-block; margin-top: 22px; padding: 10px 26px;
+                 background: #c8102e; color: white; border-radius: 4px;
+                 text-decoration: none; font-size: 0.9rem; font-weight: 600; }
+    .back-btn:hover { background: #a00d24; }
+  </style>
+</head>
+<body>
+
+  <header id="site-header">
+    <h1>🏥 Cougar Care Medical</h1>
+    <div id="header-right">
+      <span id="welcome-msg"></span>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="ty-box">
+      <div class="check">&#10004;</div>
+      <h2>Registration Submitted!</h2>
+      <p>Thank you for registering with Cougar Care Medical.</p>
+      <p>We will be in touch shortly to confirm your appointment.</p>
+      <a href="homework4.html" class="back-btn">&#8592; Back to Form</a>
+    </div>
+  </div>
+
+  <footer id="site-footer">
+    &copy; 2026 Cougar Care Medical &mdash; MIS 3371 Homework 4
+  </footer>
+
+  <script>
+    // Show welcome name from cookie on thank you page too
+    function getCookie(name) {
+      const decoded = decodeURIComponent(document.cookie);
+      for (const part of decoded.split(";")) {
+        const p = part.trimStart();
+        if (p.startsWith(name + "=")) return p.substring(name.length + 1);
+      }
+      return null;
+    }
+    const fn = getCookie("ccm_firstname");
+    document.getElementById("welcome-msg").textContent =
+      fn ? "Welcome back, " + fn + "!" : "Thank you!";
+  </script>
+</body>
+</html>
